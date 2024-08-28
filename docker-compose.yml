@@ -1,0 +1,17 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+    ports:
+      - "5000:5000"
+#    image: "548266678237.dkr.ecr.us-east-1.amazonaws.com/telle-ai-daemon"
+#    volumes:
+#      - .:/telle-ai-daemon
+    volumes:
+      - .:/telle-ai-service-server
+    networks:
+      - telle-network
+networks:
+  telle-network:
+    driver: bridge
